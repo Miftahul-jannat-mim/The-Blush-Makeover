@@ -1,102 +1,565 @@
-* { box-sizing: border-box; margin: 0; padding: 0; }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bridal Glow · Makeover Studio</title>
+  <!-- Google Fonts for a luxurious feel -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* ----- RESET & GLOBAL ----- */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-body {
-  font-family: 'Segoe UI', Arial, sans-serif;
-  background: #fff5f7;
-  color: #3a2e2e;
-  line-height: 1.6;
-}
+    body {
+      font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+      background: linear-gradient(145deg, #fff9fb 0%, #fdeef2 100%);
+      color: #3e2e32;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
 
-nav {
-  background: #b76e79;
-  padding: 16px 24px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-}
-nav .brand { color: #fff; font-size: 22px; font-weight: bold; }
-nav a {
-  color: #fff;
-  text-decoration: none;
-  margin-left: 18px;
-  font-size: 15px;
-}
-nav a:hover { text-decoration: underline; }
+    /* ----- TYPOGRAPHY & ELEMENTS ----- */
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
 
-.container {
-  max-width: 480px;
-  margin: 40px auto;
-  background: #fff;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-}
+    h1 {
+      font-size: 2.2rem;
+      color: #a14e5e;
+      margin-bottom: 0.5rem;
+      position: relative;
+    }
 
-.container.wide { max-width: 800px; }
+    h1::after {
+      content: '';
+      display: block;
+      width: 70px;
+      height: 4px;
+      background: #d9a6b2;
+      border-radius: 4px;
+      margin-top: 8px;
+    }
 
-h1, h2 { color: #b76e79; margin-bottom: 16px; }
+    h2 {
+      font-size: 1.8rem;
+      color: #9e4a5a;
+      margin-bottom: 1rem;
+    }
 
-label { display: block; margin-top: 14px; margin-bottom: 6px; font-weight: 600; font-size: 14px; }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
 
-input[type="text"], input[type="email"], input[type="password"] {
-  width: 100%;
-  padding: 10px 12px;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  font-size: 15px;
-}
+    /* ----- NAVIGATION (Bridal luxe) ----- */
+    nav {
+      background: #ffffffd9;
+      backdrop-filter: blur(10px);
+      padding: 14px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      border-bottom: 2px solid #f3d9df;
+      box-shadow: 0 6px 20px rgba(183, 110, 121, 0.08);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
 
-.password-wrap { position: relative; }
-.password-wrap input { padding-right: 44px; }
-.toggle-eye {
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 13px;
-  color: #b76e79;
-  font-weight: 600;
-}
+    nav .brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #a14e5e;
+      letter-spacing: -0.03em;
+      background: linear-gradient(135deg, #b76e79 0%, #d9a6b2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      transition: transform 0.2s;
+    }
 
-.hint { font-size: 12px; color: #888; margin-top: 4px; }
+    nav .brand:hover {
+      transform: scale(1.02);
+    }
 
-button.primary {
-  margin-top: 20px;
-  width: 100%;
-  padding: 12px;
-  background: #b76e79;
-  color: #fff;
-  border: none;
-  border-radius: 6px;
-  font-size: 16px;
-  cursor: pointer;
-}
-button.primary:hover { background: #a15a66; }
+    nav a:not(.brand) {
+      color: #6b4b52;
+      font-weight: 500;
+      font-size: 0.95rem;
+      margin-left: 24px;
+      padding: 6px 0;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.3s, color 0.3s;
+      letter-spacing: 0.02em;
+    }
 
-.msg { margin-top: 14px; padding: 10px 12px; border-radius: 6px; font-size: 14px; display: none; }
-.msg.success { background: #e3f7e3; color: #1e7a1e; display: block; }
-.msg.error { background: #fde2e2; color: #b91c1c; display: block; }
+    nav a:not(.brand):hover {
+      border-bottom-color: #b76e79;
+      color: #b76e79;
+    }
 
-.packages { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-top: 20px; }
-.package-card {
-  border: 1px solid #eee;
-  border-radius: 10px;
-  padding: 16px;
-  text-align: center;
-}
-.package-card h3 { color: #b76e79; margin-bottom: 8px; }
-.package-card .price { font-size: 20px; font-weight: bold; margin: 8px 0; }
-.discount-tag { display: inline-block; background: #ffe3ea; color: #b76e79; font-size: 12px; padding: 2px 8px; border-radius: 12px; margin-bottom: 6px; }
+    /* ----- CONTAINERS (glass-like, luminous) ----- */
+    .container {
+      max-width: 520px;
+      margin: 48px auto;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+      padding: 40px 36px;
+      border-radius: 32px;
+      box-shadow: 0 20px 40px -12px rgba(183, 110, 121, 0.25),
+                  0 0 0 1px rgba(255, 255, 255, 0.7) inset,
+                  0 0 0 1px #f3d9df inset;
+      transition: box-shadow 0.3s;
+    }
 
-table { width: 100%; border-collapse: collapse; margin-top: 16px; }
-th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid #eee; font-size: 14px; }
-th { background: #fbe9ec; }
+    .container:hover {
+      box-shadow: 0 24px 48px -12px rgba(183, 110, 121, 0.35),
+                  0 0 0 1px rgba(255, 255, 255, 0.9) inset,
+                  0 0 0 1px #ecc7d0 inset;
+    }
 
-.log-row.success { color: #1e7a1e; }
-.log-row.error { color: #b91c1c; }
+    .container.wide {
+      max-width: 920px;
+    }
 
-.footer-note { text-align: center; font-size: 12px; color: #999; margin: 30px 0; }
+    /* ----- FORMS (delicate, bridal) ----- */
+    label {
+      display: block;
+      margin-top: 20px;
+      margin-bottom: 6px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #8b5f68;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 14px 16px;
+      border: 2px solid #f0dae0;
+      border-radius: 50px;
+      font-size: 0.95rem;
+      font-family: 'Montserrat', sans-serif;
+      background: #fffafc;
+      transition: border-color 0.3s, box-shadow 0.3s;
+      color: #3e2e32;
+    }
+
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    input[type="password"]:focus {
+      outline: none;
+      border-color: #b76e79;
+      box-shadow: 0 0 0 4px rgba(183, 110, 121, 0.15);
+      background: #ffffff;
+    }
+
+    /* password eye */
+    .password-wrap {
+      position: relative;
+    }
+
+    .password-wrap input {
+      padding-right: 70px;
+    }
+
+    .toggle-eye {
+      position: absolute;
+      right: 18px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      color: #b76e79;
+      text-transform: uppercase;
+      padding: 6px 6px;
+      border-radius: 40px;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .toggle-eye:hover {
+      background: #fbe9ec;
+      color: #9e4a5a;
+    }
+
+    .hint {
+      font-size: 0.75rem;
+      color: #b39299;
+      margin-top: 6px;
+      letter-spacing: 0.02em;
+    }
+
+    /* ----- BUTTONS (chic) ----- */
+    button.primary {
+      margin-top: 30px;
+      width: 100%;
+      padding: 16px 20px;
+      background: linear-gradient(135deg, #b76e79 0%, #c98793 100%);
+      color: white;
+      border: none;
+      border-radius: 60px;
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      cursor: pointer;
+      box-shadow: 0 10px 20px -8px #b76e79;
+      transition: transform 0.2s, box-shadow 0.3s, background 0.3s;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    button.primary:hover {
+      background: linear-gradient(135deg, #a15a66 0%, #b76e79 100%);
+      box-shadow: 0 16px 28px -8px #a14e5e;
+      transform: translateY(-2px);
+    }
+
+    button.primary:active {
+      transform: translateY(2px);
+      box-shadow: 0 6px 12px -6px #a14e5e;
+    }
+
+    /* ----- MESSAGES ----- */
+    .msg {
+      margin-top: 20px;
+      padding: 14px 18px;
+      border-radius: 60px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      display: none;
+      letter-spacing: 0.02em;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+    }
+
+    .msg.success {
+      background: #f0faf0;
+      color: #2b6e2b;
+      display: block;
+      border-left: 6px solid #6fbf6f;
+    }
+
+    .msg.error {
+      background: #fff0f0;
+      color: #b33b3b;
+      display: block;
+      border-left: 6px solid #d97a7a;
+    }
+
+    /* ----- PACKAGE CARDS (bridal glam) ----- */
+    .packages {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+      margin-top: 28px;
+    }
+
+    .package-card {
+      background: #fffbfd;
+      border: 2px solid #f7e4e9;
+      border-radius: 32px;
+      padding: 28px 18px 24px;
+      text-align: center;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 16px -8px rgba(183, 110, 121, 0.12);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .package-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 6px;
+      background: linear-gradient(90deg, #ecc7d0, #b76e79, #ecc7d0);
+      opacity: 0.8;
+    }
+
+    .package-card:hover {
+      transform: translateY(-6px);
+      border-color: #ecc7d0;
+      box-shadow: 0 24px 36px -16px #c98793;
+    }
+
+    .package-card h3 {
+      font-size: 1.5rem;
+      color: #9e4a5a;
+      margin-bottom: 8px;
+    }
+
+    .package-card .price {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: #b76e79;
+      margin: 12px 0;
+      letter-spacing: -0.02em;
+    }
+
+    .discount-tag {
+      display: inline-block;
+      background: #ffeef2;
+      color: #b14b5c;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 40px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      border: 1px solid #f3cfd8;
+    }
+
+    /* ----- TABLES (elegant) ----- */
+    table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0 8px;
+      margin-top: 24px;
+    }
+
+    th {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: #7a545e;
+      background: #fbe9ec;
+      padding: 14px 16px;
+      text-align: left;
+      letter-spacing: 0.04em;
+      border-radius: 16px 16px 8px 8px;
+    }
+
+    td {
+      padding: 14px 16px;
+      background: #fffbfd;
+      border-bottom: 1px solid #f7e4e9;
+      font-size: 0.9rem;
+      color: #4b373c;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    tr:hover td {
+      background: #fff7fa;
+    }
+
+    .log-row.success td {
+      color: #2f7a2f;
+      background: #f6fff6;
+    }
+
+    .log-row.error td {
+      color: #b33b3b;
+      background: #fff8f8;
+    }
+
+    /* ----- FOOTER ----- */
+    .footer-note {
+      text-align: center;
+      font-size: 0.8rem;
+      color: #b39299;
+      margin: 40px 0 20px;
+      letter-spacing: 0.04em;
+    }
+
+    /* ----- SPARKLE EXTRAS (micro-interactions) ----- */
+    ::selection {
+      background: #f3cfd8;
+      color: #5e3b42;
+    }
+
+    /* subtle floating hearts on background? decorative */
+    body::after {
+      content: '✦ ✦ ✦';
+      position: fixed;
+      bottom: 20px;
+      right: 24px;
+      font-size: 1.2rem;
+      color: #f0d0d9;
+      opacity: 0.5;
+      pointer-events: none;
+      letter-spacing: 8px;
+      z-index: 0;
+    }
+
+    /* Responsive fine-tune */
+    @media (max-width: 600px) {
+      nav {
+        padding: 12px 20px;
+      }
+      nav a:not(.brand) {
+        margin-left: 16px;
+        font-size: 0.85rem;
+      }
+      .container {
+        padding: 28px 20px;
+        margin: 28px 16px;
+        border-radius: 28px;
+      }
+      h1 {
+        font-size: 1.8rem;
+      }
+      table, th, td {
+        font-size: 0.8rem;
+        padding: 10px 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation — bridal salon identity -->
+  <nav>
+    <a href="#" class="brand">✨ Bridal Glow</a>
+    <div>
+      <a href="#">Home</a>
+      <a href="#">Services</a>
+      <a href="#">Packages</a>
+      <a href="#">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Main container: signup / package showcase -->
+  <div class="container wide">
+    <h1>Your dream bridal look</h1>
+    <p style="margin-bottom: 20px; color: #7a5f66; font-weight: 300; font-size: 1rem;">
+      Join our makeover studio and get exclusive offers, trial sessions &amp; bridal packages.
+    </p>
+
+    <!-- Demo form -->
+    <form id="bridalForm">
+      <label for="name">Full name</label>
+      <input type="text" id="name" placeholder="Elena Rossi" value="">
+
+      <label for="email">Email address</label>
+      <input type="email" id="email" placeholder="elena@example.com" value="">
+
+      <label for="password">Create password</label>
+      <div class="password-wrap">
+        <input type="password" id="password" placeholder="••••••••">
+        <button type="button" class="toggle-eye" id="toggleEye">SHOW</button>
+      </div>
+      <div class="hint">At least 8 characters, with one number.</div>
+
+      <button type="submit" class="primary">Book my consultation</button>
+    </form>
+
+    <!-- message area (simulated) -->
+    <div class="msg success" id="demoMsg" style="display:none;">
+      💄 Thank you! Your bridal consultation is booked.
+    </div>
+
+    <!-- Package section — eye-catching bridal makeover cards -->
+    <h2 style="margin-top: 42px; font-size: 1.8rem;">Signature bridal packages</h2>
+    <div class="packages">
+      <div class="package-card">
+        <div class="discount-tag">most popular</div>
+        <h3>Classic Bride</h3>
+        <div class="price">$349</div>
+        <p style="font-size: 0.9rem; color: #6b4b52;">Airbrush makeup, hairstyling, trial session &amp; touch-up kit.</p>
+      </div>
+      <div class="package-card">
+        <div class="discount-tag">save 20%</div>
+        <h3>Royal Bride</h3>
+        <div class="price">$549</div>
+        <p style="font-size: 0.9rem; color: #6b4b52;">HD makeup, extensions, spa facial, and bridal party discount.</p>
+      </div>
+      <div class="package-card">
+        <div class="discount-tag">luxury</div>
+        <h3>Destination Bride</h3>
+        <div class="price">$899</div>
+        <p style="font-size: 0.9rem; color: #6b4b52;">On-location service, 2 trials, luxury products &amp; personal assistant.</p>
+      </div>
+    </div>
+
+    <!-- Recent activity table (simulated log, restyled) -->
+    <h2 style="margin-top: 42px; font-size: 1.6rem;">Recent bookings</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Bride</th>
+          <th>Package</th>
+          <th>Date</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="log-row success">
+          <td>Emma S.</td>
+          <td>Royal Bride</td>
+          <td>May 12</td>
+          <td>confirmed</td>
+        </tr>
+        <tr class="log-row success">
+          <td>Sofia L.</td>
+          <td>Classic Bride</td>
+          <td>May 15</td>
+          <td>confirmed</td>
+        </tr>
+        <tr class="log-row error">
+          <td>Mia K.</td>
+          <td>Destination</td>
+          <td>May 20</td>
+          <td>pending</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="footer-note">
+      ✦ Bridal Glow Studio · where every bride shines ✦
+    </div>
+  </div>
+
+  <!-- simple JS to toggle password and show message (cosmetic) -->
+  <script>
+    (function() {
+      const toggleBtn = document.getElementById('toggleEye');
+      const pwdInput = document.getElementById('password');
+      if (toggleBtn && pwdInput) {
+        toggleBtn.addEventListener('click', function() {
+          const type = pwdInput.getAttribute('type') === 'password' ? 'text' : 'password';
+          pwdInput.setAttribute('type', type);
+          this.textContent = type === 'password' ? 'SHOW' : 'HIDE';
+        });
+      }
+
+      const form = document.getElementById('bridalForm');
+      const msg = document.getElementById('demoMsg');
+      if (form) {
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+          msg.style.display = 'block';
+          msg.textContent = '💄 Thank you! Your bridal consultation is booked. We’ll be in touch.';
+          msg.classList.remove('error');
+          msg.classList.add('success');
+          // hide after 4 seconds? optional — keep visible
+        });
+      }
+
+      // hide the demo message if user clicks anywhere? not necessary
+    })();
+  </script>
+
+</body>
+</html>
