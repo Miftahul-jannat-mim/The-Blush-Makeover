@@ -1,6 +1,6 @@
 # The Blush Makeover — Mini Full-Stack Project
 
-A simple full-stack project for a fresher portfolio:
+A simple full-stack project :
 - **Frontend:** plain HTML, CSS, JavaScript
 - **Backend:** Node.js + Express, with a JSON file as the "database"
 
