@@ -72,10 +72,7 @@ the server has logged, so you can demo it live without opening a terminal.
 
 ## 5. Deploying it (Netlify only hosts the frontend!)
 
-**Important:** Netlify and GitHub Pages only host static files (HTML/CSS/JS).
-They cannot run your Node.js server. I can't create the live link for you
-directly (that requires your own GitHub/Netlify account), but here's exactly
-how to get one in a few minutes:
+
 
 ### Step A — Deploy the backend first (Render, free)
 1. Create a GitHub repo (e.g. `blush-makeover`) and push the **whole project**
