@@ -1,6 +1,6 @@
 // IMPORTANT: After you deploy the backend (e.g. on Render), replace this
 // with your live backend URL, e.g. "https://your-app-name.onrender.com"
-const API_BASE_URL = "http://localhost:5000";
+const API_BASE_URL = "https://the-blush-makeover.onrender.com";
 
 // Shows a message box under a form (green for success, red for error)
 function showMessage(elementId, text, type) {
