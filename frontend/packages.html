@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Packages - The Blush Makeover</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav>
+  <div class="brand">💄 The Blush Makeover</div>
+  <div>
+    <a href="index.html">Home</a>
+    <a href="packages.html">Packages</a>
+    <a href="dashboard.html">My Account</a>
+    <a href="login.html">Login</a>
+    <a href="admin.html">Admin</a>
+  </div>
+</nav>
+
+<div class="container wide">
+  <h2>Our Packages</h2>
+  <p id="statusNote"></p>
+
+  <div class="packages">
+    <div class="package-card">
+      <h3>Bridal Makeup</h3>
+      <div class="price">Rs. 15000</div>
+      <button class="primary" onclick="placeOrder('Bridal Makeup', 15000)">Select Package</button>
+    </div>
+    <div class="package-card">
+      <h3>Engagement Makeup</h3>
+      <div class="price">Rs. 9000</div>
+      <button class="primary" onclick="placeOrder('Engagement Makeup', 9000)">Select Package</button>
+    </div>
+    <div class="package-card">
+      <h3>Party Makeup</h3>
+      <div class="price">Rs. 5000</div>
+      <button class="primary" onclick="placeOrder('Party Makeup', 5000)">Select Package</button>
+    </div>
+  </div>
+
+  <div id="orderMsg" class="msg" style="margin-top:20px;"></div>
+</div>
+
+<script src="js/api.js"></script>
+<script src="js/packages.js"></script>
+</body>
+</html>

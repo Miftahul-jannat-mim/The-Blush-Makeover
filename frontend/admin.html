@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Admin Panel - The Blush Makeover</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav>
+  <div class="brand">💄 The Blush Makeover</div>
+  <div>
+    <a href="index.html">Home</a>
+    <a href="packages.html">Packages</a>
+    <a href="login.html">Login</a>
+    <a href="admin.html">Admin</a>
+  </div>
+</nav>
+
+<div class="container wide">
+  <h2>Admin Panel</h2>
+  <p>This page shows everything the backend has recorded &mdash; account creation/deletion,
+     failed logins, package selections and orders &mdash; exactly as it is printed in the
+     server's terminal.</p>
+
+  <h3 style="margin-top:24px;">Registered Users</h3>
+  <table id="usersTable">
+    <thead><tr><th>Name</th><th>Email</th><th>Orders</th><th>Joined</th></tr></thead>
+    <tbody></tbody>
+  </table>
+
+  <h3 style="margin-top:24px;">Backend Activity Log</h3>
+  <table id="logsTable">
+    <thead><tr><th>Time</th><th>Type</th><th>Message</th></tr></thead>
+    <tbody></tbody>
+  </table>
+</div>
+
+<script src="js/api.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>

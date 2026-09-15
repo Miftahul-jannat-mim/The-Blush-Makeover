@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>My Account - The Blush Makeover</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav>
+  <div class="brand">💄 The Blush Makeover</div>
+  <div>
+    <a href="index.html">Home</a>
+    <a href="packages.html">Packages</a>
+    <a href="#" id="logoutLink">Logout</a>
+    <a href="admin.html">Admin</a>
+  </div>
+</nav>
+
+<div class="container">
+  <h2>My Account</h2>
+  <p><b>Name:</b> <span id="uName"></span></p>
+  <p><b>Email:</b> <span id="uEmail"></span></p>
+  <p><b>Orders placed:</b> <span id="uOrders"></span></p>
+  <p id="discountNote" style="margin-top:10px; color:#b76e79;"></p>
+
+  <a href="packages.html"><button class="primary" style="margin-top:20px;">Browse Packages</button></a>
+  <button class="primary" style="background:#a33;margin-top:10px;" id="deleteBtn">Delete My Account</button>
+  <div id="dashMsg" class="msg"></div>
+</div>
+
+<script src="js/api.js"></script>
+<script src="js/dashboard.js"></script>
+</body>
+</html>
